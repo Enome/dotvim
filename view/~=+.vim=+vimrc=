@@ -106,12 +106,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 46 - ((30 * winheight(0) + 22) / 45)
+let s:l = 12 - ((11 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-46
-normal! 0
+12
+normal! 013l
 lcd ~/work/bookido/bookido
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

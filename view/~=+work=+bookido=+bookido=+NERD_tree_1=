@@ -5,7 +5,7 @@ setlocal noarabic
 setlocal noautoindent
 setlocal balloonexpr=
 setlocal nobinary
-setlocal bufhidden=hide
+setlocal bufhidden=
 setlocal nobuflisted
 setlocal buftype=nofile
 setlocal nocindent
@@ -43,7 +43,7 @@ setlocal formatoptions=tcq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
 setlocal iminsert=2
-setlocal imsearch=2
+setlocal imsearch=0
 setlocal include=
 setlocal includeexpr=
 setlocal indentexpr=
@@ -90,16 +90,16 @@ setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal nowinfixheight
-setlocal nowinfixwidth
+setlocal winfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 8 - ((7 * winheight(0) + 11) / 23)
+let s:l = 4 - ((3 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
+4
 normal! 0
-lcd ~/.vim
+lcd ~/work/bookido/bookido
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

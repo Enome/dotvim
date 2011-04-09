@@ -1,32 +1,36 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
+noremap <buffer> <silent>  :PyflakesUpdate
+noremap <buffer> <silent> dw dw:PyflakesUpdate
+noremap <buffer> <silent> dd dd:PyflakesUpdate
+noremap <buffer> <silent> u u:PyflakesUpdate
 setlocal keymap=
 setlocal noarabic
-setlocal noautoindent
+setlocal autoindent
 setlocal balloonexpr=
 setlocal nobinary
-setlocal bufhidden=hide
-setlocal nobuflisted
-setlocal buftype=nofile
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
 setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinkeys=0{,0},0),:,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:XCOMM,n:>,fb:-
+setlocal commentstring=#%s
 setlocal complete=.,w,b,u,t,i
 setlocal completefunc=
 setlocal nocopyindent
 setlocal nocursorcolumn
-setlocal cursorline
+setlocal nocursorline
 setlocal define=
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal noexpandtab
-if &filetype != 'nerdtree'
-setlocal filetype=nerdtree
+if &filetype != 'python'
+setlocal filetype=python
 endif
 setlocal foldcolumn=0
 setlocal foldenable
@@ -44,24 +48,24 @@ setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
 setlocal iminsert=2
 setlocal imsearch=2
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal include=^\\s*\\(from\\|import\\)
+setlocal includeexpr=substitute(v:fname,'\\.','/','g')
+setlocal indentexpr=GetPythonIndent(v:lnum)
+setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
+setlocal keywordprg=pydoc
 setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
 setlocal nomodeline
-setlocal nomodifiable
+setlocal modifiable
 setlocal nrformats=octal,hex
-setlocal nonumber
+setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=
+setlocal omnifunc=pythoncomplete#Complete
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -78,12 +82,12 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
-setlocal suffixesadd=
-setlocal noswapfile
+setlocal statusline=
+setlocal suffixesadd=.py
+setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'nerdtree'
-setlocal syntax=nerdtree
+if &syntax != 'python'
+setlocal syntax=python
 endif
 setlocal tabstop=4
 setlocal tags=
@@ -91,15 +95,15 @@ setlocal textwidth=0
 setlocal thesaurus=
 setlocal nowinfixheight
 setlocal nowinfixwidth
-setlocal nowrap
+setlocal wrap
 setlocal wrapmargin=0
-let s:l = 8 - ((7 * winheight(0) + 11) / 23)
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
+1
 normal! 0
-lcd ~/.vim
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

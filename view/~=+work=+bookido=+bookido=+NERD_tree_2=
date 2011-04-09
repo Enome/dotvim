@@ -90,14 +90,14 @@ setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal nowinfixheight
-setlocal nowinfixwidth
+setlocal winfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 14 - ((13 * winheight(0) + 22) / 45)
+let s:l = 4 - ((3 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
+4
 normal! 0
 lcd ~/work/bookido/bookido
 let &so = s:so_save | let &siso = s:siso_save

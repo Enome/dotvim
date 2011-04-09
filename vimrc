@@ -12,9 +12,6 @@ filetype plugin on
 filetype indent on
 syntax on
 
-set tabstop=4
-set shiftwidth=4
-
 map <F2> :tabn<CR>
 map <F3> :NERDTree<CR>
 map <F12> :%s/\r\+$//e<CR>
