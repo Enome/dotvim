@@ -12,9 +12,14 @@ filetype plugin on
 filetype indent on
 syntax on
 
+"use spaces instead of tabs
+set expandtab
+
+" maps
 map <F2> :tabn<CR>
 map <F3> :NERDTree<CR>
 map <F12> :%s/\r\+$//e<CR>
+map <F5> :retab<CR>
 
 " makes vim use .gitignore
 let filename = '.gitignore'
@@ -39,13 +44,6 @@ au BufWinEnter * silent! loadview
 " space open close fold
 nnoremap <space> za
 vnoremap <space> zf
-
-" gundo keymapping
-nnoremap <F5> :GundoToggle<CR>
-
-" coffescript compile on save
-" let coffee_compile_on_save = 1
-
 
 " backspace died for some reason
 set backspace=2
