@@ -21,6 +21,9 @@ map <F3> :NERDTree<CR>
 map <F12> :%s/\r\+$//e<CR>
 map <F5> :retab<CR>
 
+"ignore pyc
+set wildignore=*.pyc
+
 " makes vim use .gitignore
 let filename = '.gitignore'
 if filereadable(filename)
