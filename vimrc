@@ -37,6 +37,9 @@ if filereadable(filename)
     execute execstring
 endif
 
+" ignore pyc
+set wildignore=*.pyc
+
 " remember folds 
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
