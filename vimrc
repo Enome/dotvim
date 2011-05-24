@@ -56,3 +56,6 @@ set backspace=2
 
 "refresh browse
 map <leader>r :silent !xdotool search --class --onlyvisible chromium key ctrl+r<CR>
+
+"directory for *swp files
+set directory=~/.vim/swap,.
