@@ -12,6 +12,9 @@ filetype plugin on
 filetype indent on
 syntax on
 
+"change leader
+let mapleader=","
+
 "use spaces instead of tabs
 set expandtab
 
@@ -50,3 +53,6 @@ vnoremap <space> zf
 
 " backspace died for some reason
 set backspace=2
+
+"refresh browse
+map <leader>r :silent !xdotool search --class --onlyvisible chromium key ctrl+r<CR>
