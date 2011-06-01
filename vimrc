@@ -2,10 +2,18 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
 
+"Set line numbers
 set number
-colorscheme wombat256mod
+
+
+"Font
 set guifont=Consolas\ 11
 set linespace=2
+
+"Set colors to 256
+:set t_Co=256 " 256 colors
+"wombat theme: set the color scheme
+colorscheme wombat256mod
 
 filetype on
 filetype plugin on
@@ -62,3 +70,14 @@ map <leader>r :silent !xdotool search --class --onlyvisible chromium key ctrl+r<
 
 "directory for *swp files
 set directory=~/.vim/swap,.
+
+"Run ruby tests
+function! RunTests(filename)
+    " Write the file and run tests for the given filename
+    :w
+    :silent !echo;echo;echo;echo;echo
+    exec  ":!bundle exec rspec -c " . a:filename
+endfunction
+
+map <leader>a :call RunTests(@%)<cr>
+
