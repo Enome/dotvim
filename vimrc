@@ -66,18 +66,7 @@ vnoremap <space> zf
 set backspace=2
 
 "refresh browse
-map <leader>r :silent !xdotool search --class --onlyvisible chromium key ctrl+r<CR>
+map <leader>r :!xdotool search --class --onlyvisible chromium key r<CR>
 
 "directory for *swp files
 set directory=~/.vim/swap,.
-
-"Run ruby tests
-function! RunTests(filename)
-    " Write the file and run tests for the given filename
-    :w
-    :silent !echo;echo;echo;echo;echo
-    exec  ":!bundle exec rspec -c " . a:filename
-endfunction
-
-map <leader>a :call RunTests(@%)<cr>
-
