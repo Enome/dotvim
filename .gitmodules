@@ -25,3 +25,6 @@
 [submodule "bundle/pyflakes"]
 	path = bundle/pyflakes
 	url = https://github.com/mitechie/pyflakes-pathogen.git
+[submodule "bundle/rvm"]
+	path = bundle/rvm
+	url = git://github.com/tpope/vim-rvm.git
