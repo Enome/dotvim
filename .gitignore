@@ -2,3 +2,4 @@ view/
 *.swp
 .netrwhist
 /swap/
+bundle/pyflakes
