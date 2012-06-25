@@ -10,9 +10,8 @@ set number
 set guifont=Consolas\ 11
 set linespace=2
 
-"Set colors to 256
-:set t_Co=256 " 256 colors
-"wombat theme: set the color scheme
+set t_Co=256
+set background=dark
 colorscheme wombat256mod
 
 filetype on
@@ -51,8 +50,8 @@ if filereadable(filename)
     execute execstring
 endif
 
-" ignore pyc
-set wildignore=*.pyc
+" ignore pyc and node_modules
+set wildignore=*.pyc,node_modules
 
 " remember folds 
 au BufWinLeave * silent! mkview
