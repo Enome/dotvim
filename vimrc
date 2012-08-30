@@ -69,3 +69,17 @@ map <leader>r :!xdotool search --class --onlyvisible chromium key r<CR>
 
 "directory for *swp files
 set directory=~/.vim/swap,.
+
+"disable jslint highlighting
+"let g:JSLintHighlightErrorLine = 0
+
+"Error highlight
+hi clear SpellBad
+hi SpellBad cterm=underline
+
+"Search Highlight
+hi clear Search
+hi Search cterm=underline ctermbg=black
+
+"Jump to search
+set incsearch
