@@ -5,7 +5,6 @@ call pathogen#runtime_append_all_bundles()
 "Set line numbers
 set number
 
-
 "Font
 set guifont=Consolas\ 11
 set linespace=2
@@ -30,9 +29,6 @@ map <F2> :tabn<CR>
 map <F3> :NERDTree<CR>
 map <F12> :%s/\r\+$//e<CR>
 map <F5> :retab<CR>
-
-"ignore pyc
-set wildignore=*.pyc
 
 " makes vim use .gitignore
 let filename = '.gitignore'
