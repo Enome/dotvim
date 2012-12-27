@@ -61,3 +61,6 @@ hi Search cterm=underline ctermbg=black
 
 "Jump to search
 set incsearch
+
+" Turn off auto comments
+set formatoptions-=r
